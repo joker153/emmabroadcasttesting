@@ -8,7 +8,7 @@ from pyrogram.errors import ButtonDataInvalid, FloodWait
 
 from bot.database import Database # pylint: disable=import-error
 from bot.bot import Bot # pylint: disable=import-error
-
+from bot import MASSAGE_PHOTO
 
 FIND = {}
 INVITE_LINK = {}
@@ -164,10 +164,9 @@ async def auto_filter(bot, update):
         
         # Just A Decaration
         result[0].append([
-            InlineKeyboardButton(f"🔰 Page 1/{len_result if len_result < max_pages else max_pages} 🔰", callback_data="ignore")
+            InlineKeyboardButton(f"📑 Page 1/{len_result if len_result < max_pages else max_pages} 📑", callback_data="ignore")
         ])
         
-        result[0].append([ InlineKeyboardButton(f"🔎HOW TO SEARCH MOVIES🔍", url="https://t.me/mainmovieuploaders") ])       
         # if show_invite is True Append invite link buttons
         if show_invite:
             
@@ -212,9 +211,10 @@ async def auto_filter(bot, update):
         reply_markup = InlineKeyboardMarkup(result[0])
 
         try:
-            await bot.send_message(
+            await bot.send_photo(
                 chat_id = update.chat.id,
-                text=f"""<i><b>𝐆𝐫𝐨𝐮𝐩:-@movieuploader2 \n𝐑𝐞𝐬𝐮𝐥𝐭𝐬 𝐅𝐨𝐮𝐧𝐝:- {(len_results)} \n𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐌𝐨𝐯𝐢𝐞:-</i></b> <b>{query}</b>\n\n 👉 <b>ഈ ചാനലിൽ</b> <b><i><a href="https://t.me/minnal_murali_2021_hdrip">⚔️ 🅼🅾🆅🅸🅴🆄🅿🅻🅾🅰🅳🅴🆁🆂 ⚔️</a></i></b> <b>ജോയിൻ ചെയ്ത ശേഷം ബട്ടൺ ക്ലിക്ക് ചെയ്യുക.</b>""",
+                photo= MASSAGE_PHOTO,
+                caption=f"""<i><b>𝐆𝐫𝐨𝐮𝐩:-@movieuploader2 \n🗂️Total File :- {(len_results)} </b>\n🎬File Name :-</b> <code>{query}</code>\n\n 👉 <b>ഈ ചാനലിൽ</b> <b><i><a href="https://t.me/minnal_murali_2021_hdrip">⚔️ 🅼🅾🆅🅸🅴🆄🅿🅻🅾🅰🅳🅴🆁🆂 ⚔️</a></i></b> <b>ജോയിൻ ചെയ്ത ശേഷം ബട്ടൺ ക്ലിക്ക് ചെയ്യുക.</b>""",
                 reply_markup=reply_markup,
                 parse_mode="html",
                 reply_to_message_id=update.message_id
