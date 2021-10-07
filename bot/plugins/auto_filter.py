@@ -211,7 +211,7 @@ async def auto_filter(bot, update):
         reply_markup = InlineKeyboardMarkup(result[0])
 
         try:
-            await bot.send_photo(
+            await bot.send_video(
                 chat_id = update.chat.id,
                 photo= MASSAGE_PHOTO,
                 caption=f"""<i><b>💌GROUP:- @movieuploader2 \n🗂️Total File :- {(len_results)} </b>\n🎬File Name :-</b> <code>{query}</code>\n\n 👉 <b>ഈ ചാനലിൽ</b> <b><i><a href="https://t.me/minnal_murali_2021_hdrip">⚔️ 🅼🅾🆅🅸🅴🆄🅿🅻🅾🅰🅳🅴🆁🆂 ⚔️</a></i></b> <b>ജോയിൻ ചെയ്ത ശേഷം ബട്ടൺ ക്ലിക്ക് ചെയ്യുക.</b>""",
