@@ -142,7 +142,6 @@ async def auto_filter(bot, update):
         await Send_message.delete()
     
 
-    if len(results) == 0: # double check
         return
     
     else:
