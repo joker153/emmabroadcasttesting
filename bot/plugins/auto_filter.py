@@ -131,11 +131,13 @@ async def auto_filter(bot, update):
         ])
         
     else:
-        Send_message = await bot.send_message(
-            chat_id=update.chat.id,
-            text="<b>Couldn't Find This Movie.Try Again ഈ സിനിമയുടെ ഒറിജിനൽ പേര് ഗൂഗിളിൽ പോയി കണ്ടെത്തി അതുപോലെ ഇവിടെ കൊടുക്കുക 🥺</b>",
-            reply_to_message_id=update.message_id
-        )
+        await update.reply_photo(
+            photo="https://telegra.ph/file/ba354ca0d4fe7673ec4b3.jpg",
+            caption="<b><i>Hey,I Couldn't Find The Movie You're Looking for😔😔\n\nCheck Your Spelling In Google And Try Again\n👉Don't Get Film Use me👇</i></b>",
+            reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton(text="📞Contact admin", url="https://t.me/movieuploader153"
+                                     )]])
+            ) 
         await asyncio.sleep(5)
         await Send_message.delete()
     
