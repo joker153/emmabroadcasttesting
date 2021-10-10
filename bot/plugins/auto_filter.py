@@ -142,6 +142,7 @@ async def auto_filter(bot, update):
         await Send_message.delete()
     
 
+    if len(results) == 0: # double check
         return
     
     else:
@@ -220,11 +221,6 @@ async def auto_filter(bot, update):
                 parse_mode="html",
                 reply_to_message_id=update.message_id
             )
-            await asyncio.sleep(5)
-            await Send_message.delete()
-    
-
-    if len(results) == 0: # double check
 
         except ButtonDataInvalid:
             print(result[0])
