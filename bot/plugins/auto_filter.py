@@ -138,8 +138,8 @@ async def auto_filter(bot, update):
                 InlineKeyboardButton(text="📞Contact admin", url="https://t.me/movieuploader153"
                                      )]])
             ) 
-        await asyncio.sleep(5)
-        await Send_message.delete()
+            await asyncio.sleep(5)
+            await Send_message.delete()
     
 
     if len(results) == 0: # double check
