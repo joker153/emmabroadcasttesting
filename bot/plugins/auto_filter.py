@@ -131,9 +131,10 @@ async def auto_filter(bot, update):
         ])
         
     else:
-        Send_message = await bot.send_message(
+        Send_message = await bot.send_photo(
             chat_id=update.chat.id,
-            text="<b><i>Hey,I Couldn't Find The Movie You're Looking for😔😔\n\nCheck Your Spelling In Google And Try Again\n👉Don't Get Film Use me👇</i></b>",
+            photo= 'https://telegra.ph/file/dbcf0aab00744c54de76b.jpg',
+            caption="<b><i>Hey,I Couldn't Find The Movie You're Looking for😔😔\n\nCheck Your Spelling In Google And Try Again\n👉Don't Get Film Use me👇</i></b>",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton(text="📞Contact admin", url="https://t.me/movieuploader153"
                                      )]])
