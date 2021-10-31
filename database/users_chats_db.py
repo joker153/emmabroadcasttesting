@@ -1,6 +1,6 @@
 # https://github.com/odysseusmax/animated-lamp/blob/master/bot/database/database.py
 import motor.motor_asyncio
-from info import DATABASE_NAME, DB_URI
+from bot import DATABASE_NAME, DB_URI
 
 class Database:
     
