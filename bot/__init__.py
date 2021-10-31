@@ -21,7 +21,7 @@ DB_URI = os.environ.get("DB_URI")
 
 DATABASE_NAME = os.environ.get('DATABASE_NAME', "Rajappan")
 
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMINS', '').split()]
+ADMINS = os.environ.get("ADMINS")
 
 MASSAGE_PHOTO = os.environ.get("PHOTO")
 
